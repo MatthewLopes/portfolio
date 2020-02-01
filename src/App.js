@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 
 class App extends Component {
-    constructor() {
-        super();
-        this.state = { displayBio: false };
+    state = { displayBio: false};
 
-        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
-    }
-
-    toggleDisplayBio() {
+    toggleDisplayBio = () => {
         this.setState({ displayBio: !this.state.displayBio });
     }
 
@@ -17,7 +12,7 @@ class App extends Component {
             <div>
                 <h1>Hello!</h1>
                 <p>My name is Matthew. I'm a software engineer.</p>
-                <p>I'm learning React</p>
+                <p>I'm creating a portfolio application</p>
                 {
                     this.state.displayBio ? (
                         <div>
