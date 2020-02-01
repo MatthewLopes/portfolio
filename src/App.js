@@ -1,12 +1,40 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      Hello React App
-    </div>
-  );
+class App extends Component {
+    constructor() {
+        super();
+        this.state = { displayBio: false };
+
+        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+    }
+
+    toggleDisplayBio() {
+        this.setState({ displayBio: !this.state.displayBio });
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Hello!</h1>
+                <p>My name is Matthew. I'm a software engineer.</p>
+                <p>I'm learning React</p>
+                {
+                    this.state.displayBio ? (
+                        <div>
+                            <p>I live in Jacksonville and work at CSX.</p>
+                            <p>I enjoy UI development and am learning React.js.</p>
+                            <p>Besides coding, I also love soccer and my favorite team is Manchester United.</p>
+                            <button onClick={this.toggleDisplayBio}>Show less</button>
+                        </div>
+                    ) : (
+                        <div>
+                            <button onClick={this.toggleDisplayBio}>Read more</button>
+                        </div>
+                    )
+                }
+            </div>
+        )
+    }
 }
 
 export default App;
