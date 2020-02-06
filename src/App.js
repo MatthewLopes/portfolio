@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Projects from './Projects';
 import SocialProfiles from './SocialProfiles';
+import profile from './assets/profile.png';
 
 class App extends Component {
     state = { displayBio: false};
@@ -12,6 +13,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <img src={profile} alt='profile' className='profile'/>
                 <h1>Hello!</h1>
                 <p>My name is Matthew. I'm a software engineer.</p>
                 <p>I'm creating a portfolio application</p>
